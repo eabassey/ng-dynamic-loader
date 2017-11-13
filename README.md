@@ -1,27 +1,16 @@
-# DynamicLoader
+# Angular- Ng Dynamic Loader with NGRX
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+Dynamically loading components from any module to any host directive for angular 5.x integration with ngrx store and effects.
 
-## Development server
+## Set up
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Import `LoaderModule` into your AppModule.
+Import `LoaderEffect` and include in your EffectsModule forRoot array.
 
-## Code scaffolding
+Create your directive as normal with viewContainerRef injected into contructor and implement `GenericHostDirective`.
+Place directive selector on an anchor element in a component.html where you will dynamically load.
+Get a ViewChild reference to the directive in the component.ts.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Make sure all components to be dynamicall loaded are included in the `entryComponent `array of the module they are registered.
+Let all components to be dynamically loaded implement `BaseComponent`.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

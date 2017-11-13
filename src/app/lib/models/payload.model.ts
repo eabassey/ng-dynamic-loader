@@ -3,7 +3,7 @@ import { GenericHostDirective } from '../generic-host.directive';
 export interface Payload<T> {
     component: any;
     host: GenericHostDirective;
-    data?: T;
+    data?: Partial<T>;
 }
 
 
