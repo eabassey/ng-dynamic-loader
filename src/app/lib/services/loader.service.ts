@@ -1,6 +1,6 @@
 import { Injectable, ComponentFactoryResolver  } from '@angular/core';
 import { GenericHostDirective } from '../generic-host.directive';
-import { BaseComponent } from '../base.component';
+import { DynamicComponent } from '../dynamic.component';
 
 
 @Injectable()
@@ -17,7 +17,7 @@ export class LoaderService {
 
         const compRef = viewContainerRef.createComponent(factory);
 
-        const componentInstance = <BaseComponent>compRef.instance;
+        const componentInstance = <DynamicComponent>compRef.instance;
         componentInstance.data = data ? data : null;
         componentInstance.host = host;
     }

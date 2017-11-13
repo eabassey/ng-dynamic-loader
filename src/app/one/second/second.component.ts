@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { BaseComponent } from '../../lib/base.component';
+import { DynamicComponent } from '../../lib/dynamic.component';
 import { GenericHostDirective } from '../../lib/generic-host.directive';
 import { Store } from '@ngrx/store';
 import * as loaderActions from '../../lib/actions';
@@ -13,7 +13,7 @@ import { FirstComponent } from '../first/first.component';
   styleUrls: ['./second.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class SecondComponent implements OnInit, BaseComponent {
+export class SecondComponent implements OnInit, DynamicComponent {
   data: any;
   host: GenericHostDirective;
   constructor(private store: Store<any>) { }
