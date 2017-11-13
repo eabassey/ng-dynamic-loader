@@ -22,11 +22,11 @@ export class SecondComponent implements OnInit, DynamicComponent {
   }
 
   goBack() {
-    this.store.dispatch(new loaderActions.LoadComponent({component: FirstComponent, host: this.host}));
+    this.store.dispatch(new loaderActions.LoadComponent({component: FirstComponent, host: this.host, data: this.data}));
      }
    
      goNext() {
-       this.store.dispatch(new loaderActions.LoadComponent({component: ThirdComponent, host: this.host}));
+       this.store.dispatch(new loaderActions.LoadComponent({component: ThirdComponent, host: this.host, data: this.data}));
      }
 
 }

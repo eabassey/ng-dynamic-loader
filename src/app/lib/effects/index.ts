@@ -10,7 +10,7 @@ export class LoaderEffect {
     constructor(private actions$: Actions,
                 private loaderService: LoaderService) {}
 
-    @Effect({dispatch: false}) load$ = this.actions$.ofType<loaderActions.LoadComponent>(loaderActions.LOAD_COMPONENT)
+    @Effect({dispatch: false}) load$ = this.actions$.ofType<loaderActions.LoadComponent<any>>(loaderActions.LOAD_COMPONENT)
                     .map(action => {
                         const comp = action.payload.component;
                         const host = action.payload.host;

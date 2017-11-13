@@ -22,7 +22,7 @@ export class ThirdComponent implements OnInit, DynamicComponent {
   }
 
   goBack() {
-    this.store.dispatch(new loaderActions.LoadComponent({component: SecondComponent, host: this.host}));
+    this.store.dispatch(new loaderActions.LoadComponent({component: SecondComponent, host: this.host, data: this.data}));
   }
 
 

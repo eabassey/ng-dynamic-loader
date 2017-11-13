@@ -25,7 +25,7 @@ export class FirstComponent implements OnInit, DynamicComponent {
   }
 
   goNext() {
-    this.store.dispatch(new loaderActions.LoadComponent({component: SecondComponent, host: this.host}));
+    this.store.dispatch(new loaderActions.LoadComponent<{name:string}>({component: SecondComponent, host: this.host,data:{name:'John'}}));
   }
 
 
