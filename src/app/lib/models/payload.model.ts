@@ -12,6 +12,6 @@ export interface ComponentData {
     comp1: any;
 }
 
-export interface ModuleData {
- theData: any;
-}
+// export interface ModuleData {
+//  theData: any;
+// }

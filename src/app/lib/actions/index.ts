@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Payload, ComponentData, ModuleData } from '../models/payload.model';
+import { Payload, ComponentData } from '../models/payload.model';
 
 export const LOAD_COMPONENT = 'Load Component';
 export const LOAD_MODULE = 'Load Module';
@@ -9,7 +9,7 @@ export class LoadComponent implements Action {
     constructor(public payload: Payload<ComponentData>) {}
 }
 
-export class LoadModule implements Action {
-    readonly type = LOAD_MODULE;
-    constructor(public payload: Payload<ModuleData>) {}
-}
+// export class LoadModule implements Action {
+//     readonly type = LOAD_MODULE;
+//     constructor(public payload: Payload<ModuleData>) {}
+// }

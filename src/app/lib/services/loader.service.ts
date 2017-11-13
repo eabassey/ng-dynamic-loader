@@ -22,9 +22,9 @@ export class LoaderService {
         componentInstance.host = host;
     }
 
-    loadModule() {
+    // loadModule() {
 
-    }
+    // }
 
     
 }
