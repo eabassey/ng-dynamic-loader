@@ -21,7 +21,7 @@ export class FourthComponent implements OnInit, DynamicComponent {
   }
 
   goBack() {
-    this.store.dispatch(new loaderActions.LoadComponent({component: ThirdComponent, host: this.host}));
+    this.store.dispatch(new loaderActions.LoadComponent({component: ThirdComponent, host: this.host, data: this.data}));
   }
 
 

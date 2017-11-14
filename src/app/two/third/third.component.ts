@@ -28,7 +28,7 @@ export class ThirdComponent implements OnInit, DynamicComponent {
 
 
      goNext() {
-       this.store.dispatch(new loaderActions.LoadComponent({component: FourthComponent, host: this.host}));
+       this.store.dispatch(new loaderActions.LoadComponent({component: FourthComponent, host: this.host, data: this.data}));
      }
 
 }
