@@ -1,6 +1,9 @@
 import { GenericHostDirective } from './generic-host.directive';
 
-export class DynamicComponent {
+export interface DynamicComponent {
     data?: any;
     host: GenericHostDirective;
+
+    mutate();
+    restore();
 }

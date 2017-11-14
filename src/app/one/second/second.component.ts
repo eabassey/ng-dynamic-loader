@@ -19,6 +19,7 @@ export class SecondComponent implements OnInit, DynamicComponent {
   constructor(private store: Store<any>) { }
 
   ngOnInit() {
+   this.restore();
   }
 
   goBack() {
@@ -26,7 +27,16 @@ export class SecondComponent implements OnInit, DynamicComponent {
      }
    
      goNext() {
+       this.mutate();
        this.store.dispatch(new loaderActions.LoadComponent({component: ThirdComponent, host: this.host, data: this.data}));
+     }
+
+     mutate() {
+      this.data.family = 'Yannick';
+     }
+
+     restore() {
+      delete this.data.family;
      }
 
 }

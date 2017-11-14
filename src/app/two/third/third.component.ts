@@ -19,6 +19,7 @@ export class ThirdComponent implements OnInit, DynamicComponent {
   constructor(private store: Store<any>) { }
 
   ngOnInit() {
+    this.restore();
   }
 
   goBack() {
@@ -26,9 +27,19 @@ export class ThirdComponent implements OnInit, DynamicComponent {
   }
 
 
+  goNext() {
+    this.mutate();
+    this.store.dispatch(new loaderActions.LoadComponent({component: FourthComponent, host: this.host, data: this.data}));
+  }
 
-     goNext() {
-       this.store.dispatch(new loaderActions.LoadComponent({component: FourthComponent, host: this.host, data: this.data}));
-     }
+     mutate() {
+     this.data.address = {street1: 'upper lake', province: 'Gauteng' };
+     this.data.pets = ['dog', 'cat', 'parrot'];
+    }
+
+    restore() {
+     delete this.data.address;
+     delete this.data.pets;
+    }
 
 }

@@ -12,12 +12,14 @@ import { SecondComponent } from '../second/second.component';
   encapsulation: ViewEncapsulation.None
 })
 export class FirstComponent implements OnInit, DynamicComponent {
+  
   data: any;
   host: GenericHostDirective;
 
   constructor(private store: Store<any>) { }
 
   ngOnInit() {
+    this.restore();
   }
 
   goBack() {
@@ -25,9 +27,17 @@ export class FirstComponent implements OnInit, DynamicComponent {
   }
 
   goNext() {
-    this.store.dispatch(new loaderActions.LoadComponent<{name:string}>({component: SecondComponent, host: this.host,data:{name:'John'}}));
+    this.mutate();
+    this.store.dispatch(new loaderActions.LoadComponent<{name: string}>({component: SecondComponent, host: this.host,
+       data: this.data}));
   }
 
+  mutate() {
+    this.data.name = 'Lovinton';
+  }
+  restore() {
+    delete this.data.name;
+  }
 
 
 }

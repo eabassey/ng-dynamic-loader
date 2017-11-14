@@ -18,6 +18,7 @@ export class FourthComponent implements OnInit, DynamicComponent {
   constructor(private store: Store<any>) { }
 
   ngOnInit() {
+    this.restore();
   }
 
   goBack() {
@@ -25,9 +26,15 @@ export class FourthComponent implements OnInit, DynamicComponent {
   }
 
 
-
      goNext() {
-
+      // this.mutate();
      }
+
+     mutate() {
+
+    }
+    restore() {
+
+    }
 
 }

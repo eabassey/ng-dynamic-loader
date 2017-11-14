@@ -18,7 +18,7 @@ export class LoaderService {
         const compRef = viewContainerRef.createComponent(factory);
 
         const componentInstance = <DynamicComponent>compRef.instance;
-        componentInstance.data = data ? data : null;
+        componentInstance.data = data ? data : {};
         componentInstance.host = host;
     }
 
