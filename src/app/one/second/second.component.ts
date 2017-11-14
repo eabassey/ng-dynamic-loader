@@ -25,7 +25,7 @@ export class SecondComponent implements OnInit, DynamicComponent {
   goBack() {
     this.store.dispatch(new loaderActions.LoadComponent({component: FirstComponent, host: this.host, data: this.data}));
      }
-   
+
      goNext() {
        this.mutate();
        this.store.dispatch(new loaderActions.LoadComponent({component: ThirdComponent, host: this.host, data: this.data}));
@@ -33,10 +33,12 @@ export class SecondComponent implements OnInit, DynamicComponent {
 
      mutate() {
       this.data.family = 'Yannick';
+      localStorage.setItem('data', JSON.stringify(this.data));
      }
 
      restore() {
       delete this.data.family;
+      localStorage.setItem('data', JSON.stringify(this.data));
      }
 
 }

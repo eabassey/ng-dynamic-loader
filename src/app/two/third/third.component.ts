@@ -35,11 +35,13 @@ export class ThirdComponent implements OnInit, DynamicComponent {
      mutate() {
      this.data.address = {street1: 'upper lake', province: 'Gauteng' };
      this.data.pets = ['dog', 'cat', 'parrot'];
+     localStorage.setItem('data', JSON.stringify(this.data));
     }
 
     restore() {
      delete this.data.address;
      delete this.data.pets;
+     localStorage.setItem('data', JSON.stringify(this.data));
     }
 
 }

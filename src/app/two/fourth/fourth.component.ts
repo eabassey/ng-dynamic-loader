@@ -27,11 +27,11 @@ export class FourthComponent implements OnInit, DynamicComponent {
 
 
      goNext() {
-      // this.mutate();
+       this.mutate();
      }
 
      mutate() {
-
+      localStorage.removeItem('data');
     }
     restore() {
 

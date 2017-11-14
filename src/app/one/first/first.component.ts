@@ -34,9 +34,11 @@ export class FirstComponent implements OnInit, DynamicComponent {
 
   mutate() {
     this.data.name = 'Lovinton';
+    localStorage.setItem('data', JSON.stringify(this.data));
   }
   restore() {
     delete this.data.name;
+    localStorage.setItem('data', JSON.stringify(this.data));
   }
 
 
